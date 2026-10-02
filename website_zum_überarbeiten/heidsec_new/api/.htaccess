@@ -1,0 +1,23 @@
+# HeidSec Same-Origin API Proxy (D18)
+# All /api/* paths that are not real files are rewritten to index.php, which
+# forwards them to the HeidSec Railway backend (same origin → no CORS, session
+# cookie stays host-only for heidsec.de).
+#
+# Kept scoped to this directory so the webspace root .htaccess (security
+# headers, CSP, HSTS) is not touched.
+
+Options -Indexes
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Existing real files (e.g. legacy api/chat.php) keep working; everything
+  # else under /api/* goes to the proxy.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.php [L,QSA]
+</IfModule>

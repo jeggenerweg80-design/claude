@@ -1,0 +1,71 @@
+HeidSec Website - Deploy Package
+================================
+Stand: 2026-08-20 (Build 4 - D18/D19 SAME-ORIGIN API PROXY)
+Quell-Repo: C:\Users\x\Desktop\22222\heidsec-website-final\heidsec-website
+Build-Stand: D18-D20 (Same-Origin API Proxy + relativer API-Base) + bestehende
+             uncommittete Website-Aenderungen der D-Serie (OWN, Teil des Pakets)
+Build-Befehl: npm run build  (tsc --noEmit && vite build)
+
+INHALT (113 Dateien + Manifest/Hashes)
+--------------------------------------
+/                         index.html (Startseite, SSR-prerendert)
+/api/index.php            NEU: PHP-cURL Same-Origin API Proxy (D18) - leitet
+                          /api/* an das HeidSec-Backend (Railway) weiter.
+/api/.htaccess            NEU: Rewrite fuer /api/* -> index.php (nur in diesem
+                          Ordner, root .htaccess bleibt unangetastet).
+/admin/                   Admin-Dashboard + Unterseiten (announcements, faqs, legal, media, sections)
+/kuendigen/               Kündigung
+/legal/                   Impressum, Datenschutz, AGB, Nutzungs-, Lizenz-, KI-, VPN-Bedingungen,
+                          Widerrufsbelehrung, App-Datenschutz (jeweils SSR-prerendert)
+/login/                   Login + /login/forgot-password (Passwort zurücksetzen - Link anfordern)
+/mein-konto/              Kundenportal (Übersicht, Profil, Abos, Geräte, Downloads, Support)
+/register/                Registrierung
+/reset-password/          Passwort zurücksetzen (Ziel des Live-Mail-Links /reset-password?token=...)
+/verify-email/            E-Mail-Verifizierung
+/widerruf/                §356a Widerruf
+/assets/                  Alle Hashed-Bundles (JS/CSS) + Medien (Videos, Plates, Icons, OG-Cover)
+HASHES.txt                SHA-256 Hashliste aller Paketdateien (Build 4, 113/113 validiert)
+
+HINWEISE FÜR DEN HOSTING-UPLOAD
+-------------------------------
+- STATIC-HOSTING: Alle Seiten sind vollständig SSR-prerendert. Ordnerinhalt
+  in das Webroot kopieren (ersetzen).
+- /api/*-Aufrufe laufen seit Build 4 über den Same-Origin Proxy
+  (/api/index.php): Das Frontend spricht ausschliesslich die eigene Domain an.
+  Dadurch entfallen CORS und die CSP-connect-src-Einschränkung des Webspace
+  (nur 'self' erlaubt). Cookies, CSRF (X-CSRF-Token), Authorization (Bearer)
+  und Set-Cookie werden vom Proxy 1:1 durchgereicht; es wird kein Token geloggt.
+- Der Proxy zeigt auf https://heidsec-backend-production.up.railway.app
+  (UPSTREAM_BASE in /api/index.php). Bei Backend-Umzug nur dort anpassen.
+- /api/.htaccess enthält ausschliesslich die Proxy-Rewrite-Regeln. Die root
+  .htaccess des Webspace (Security-Header, CSP, HSTS) wird NICHT ersetzt.
+- robots.txt / sitemap.xml werden serverseitig generiert (Route-Handler).
+
+ÄNDERUNGEN GEGENÜBER BUILD 3 (D18/D19 SAME-ORIGIN PROXY)
+--------------------------------------------------------
+- NEU /api/index.php: PHP-cURL Proxy für /api/* (Same-Origin). Forwarding-
+  Vertrag identisch zu scripts/e2e-proxy.mjs: Methode, Query, Body, Header
+  (Cookie, X-CSRF-Token, Authorization, Content-Type, Accept, User-Agent,
+  Last-Event-ID); Origin wird auf https://heidsec.de gesetzt; Set-Cookie wird
+  durchgereicht; Antwort wird gestreamt (SSE-kompatibel). Kein Logging von
+  Tokens/Headern/Bodies (nur token-freier error_log bei Upstream-Fehler).
+- NEU /api/.htaccess: RewriteRule für /api/* -> index.php (nur wenn keine
+  reale Datei). Legacy-Dateien (z. B. api/chat.php) bleiben erreichbar.
+- API-Base relativ: src/lib/auth.ts und src/lib/chat-api.ts rufen nun
+  same-origin /api/* auf (kein hardcoded Railway-Host im Client-Bundle).
+  E2E-Override VITE_API_BASE=http://127.0.0.1:8787 bleibt erhalten.
+- Alle Hashed-Bundles neu gebaut (29 alte Bundles aus Build 3 entfernt).
+
+VERIFIKATION
+------------
+- tsc --noEmit && vite build: OK (25 Seiten prerendert, kein Fehler)
+- Upload-Ordner == dist/client + api/-Proxy: byte-identisch synced
+- SHA-256 Hashliste: HASHES.txt (113 Einträge, validiert 113/113)
+- Auth-Pfade (Login/Register/Reset/Verify/Logout) im Paket vorhanden (D20)
+- SSE nicht erzwungen: Chat-API nutzt SSE mit JSON-Fallback, Device-Dashboard
+  nutzt SSE mit 30s-Polling-Fallback - unverändert (D20)
+
+HINWEIS ORDNER /1/
+------------------
+- Der Ordner /1/ im Paket ist ein alter Test-/Backup-Ordner und KEIN Teil des
+  Pakets (nicht in HASHES.txt). Vor dem Upload optional löschen.
