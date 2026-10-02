@@ -36,7 +36,7 @@ export default function PlanPanel() {
               ))}
             </div>
             <div className="b-plan-side">
-              <p className="b-pane-role">Ausgewählt</p>
+              <p className="b-pane-role"><span className="chip info">Ausgewählt</span></p>
               <h3>SecureApp {p.name}</h3>
               <PricePair price={p.price} interval={interval} />
               <p className="b-sub">Add-ons</p>

@@ -109,7 +109,7 @@ export default function HeroConsole() {
               </>
             ) : (
               <>
-                <p className="b-readout-k">Beispielereignis · Schritt {step + 1} von {steps.length}</p>
+                <p className="b-readout-k">Beispielereignis · Schritt {step + 1} von {steps.length} <span className={`chip ${cur.chip.tone}`}>{cur.chip.label}</span></p>
                 <p className="b-readout-t">{cur.title}</p>
                 <p className="b-readout-d">{cur.text}</p>
               </>

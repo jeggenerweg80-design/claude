@@ -73,12 +73,13 @@ export interface Step {
   title: string
   text: string
   focus: ModuleId[] | 'all'
+  chip: { tone: 'warn' | 'info' | 'ok'; label: string }
 }
 
 /** Beispielereignis (illustrativ, ohne Zahlen): Mail mit verdächtigem Link. */
 export const steps: Step[] = [
-  { key: 'detect', label: 'Erkennen', title: 'Eine Mail mit verdächtigem Link', text: 'Die Plattform erkennt Auffälliges und meldet das Ereignis.', focus: ['mailguard'] },
-  { key: 'explain', label: 'Erklären', title: 'Die KI übersetzt den Fund', text: 'Du siehst in normaler Sprache, worum es geht und warum es relevant ist.', focus: ['ki'] },
-  { key: 'rate', label: 'Bewerten', title: 'SecureApp ordnet das Risiko ein', text: 'Du siehst, wie ernst die Lage ist und was auf dem Spiel steht.', focus: ['secureapp'] },
-  { key: 'act', label: 'Handeln', title: 'Konkrete Schritte statt Rätselraten', text: 'Aus der Bewertung werden Handlungsmöglichkeiten, die du direkt umsetzt.', focus: 'all' },
+  { key: 'detect', label: 'Erkennen', title: 'Eine Mail mit verdächtigem Link', text: 'Die Plattform erkennt Auffälliges und meldet das Ereignis.', focus: ['mailguard'], chip: { tone: 'warn', label: 'Auffällig' } },
+  { key: 'explain', label: 'Erklären', title: 'Die KI übersetzt den Fund', text: 'Du siehst in normaler Sprache, worum es geht und warum es relevant ist.', focus: ['ki'], chip: { tone: 'info', label: 'Erklärt' } },
+  { key: 'rate', label: 'Bewerten', title: 'SecureApp ordnet das Risiko ein', text: 'Du siehst, wie ernst die Lage ist und was auf dem Spiel steht.', focus: ['secureapp'], chip: { tone: 'info', label: 'Bewertet' } },
+  { key: 'act', label: 'Handeln', title: 'Konkrete Schritte statt Rätselraten', text: 'Aus der Bewertung werden Handlungsmöglichkeiten, die du direkt umsetzt.', focus: 'all', chip: { tone: 'ok', label: 'Handlungsfähig' } },
 ]

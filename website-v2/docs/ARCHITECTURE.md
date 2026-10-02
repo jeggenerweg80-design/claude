@@ -38,3 +38,9 @@ Neue Homepage in `src/b/` (Hero-Konsole, Plattform-Konsole, Tarif-Panel, Prinzip
 (Markenboards: Near-Black/Navy, Electric Blue, Cyan, Threat-Rot nur für Bedrohungsmarker; Fenster, Seitenleiste, Readout nach App-Logik).
 Concept-A-Komponenten bleiben im Repo unverändert; Concept A liegt vollständig auf Commit 071e175. Inhalte, Preise, Rechtstexte,
 Routing und Commerce-Schnittstellen sind unverändert. Die MainApp-Screens selbst lagen nicht im Repo; die App-Anmutung ist aus den Boards abgeleitet.
+
+## Concept B, App-Kalibrierung (textliche Design-DNA)
+Solide Navy-Surfaces statt Glas, kontrollierte blaue Borders, HeidSec-Blau für Primary Actions, Cyan nur für aktive Zustände,
+Grün nur sicher/verifiziert, Amber nur Warnung/ungeklärt, Status-Chips, größere Radien, keine Blur-/Glow-Effekte, keine Fenster-Deko.
+Hinweis: Die MainApp-Screenshots selbst lagen dem Repository/der Sitzung nicht vor; Kalibrierung erfolgte nach der schriftlichen DNA-Beschreibung.
+Nach Eingang der Screenshots Abgleich von Farbwerten, Radien und Chip-Stilen nachziehen.

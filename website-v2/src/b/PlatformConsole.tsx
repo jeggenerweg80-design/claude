@@ -21,7 +21,6 @@ export default function PlatformConsole() {
           <h2 id="b-plat-h">Sechs Bausteine, eine Oberfläche.</h2>
         </header>
         <div className="b-window">
-          <div className="b-window-bar" aria-hidden="true"><i /><i /><i /><span>HeidSec</span></div>
           <div className="b-window-body">
             <div className="b-side" role="tablist" aria-orientation="vertical" aria-label="HeidSec Bausteine">
               {modules.map((x, n) => (
