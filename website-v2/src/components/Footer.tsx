@@ -26,7 +26,12 @@ export default function Footer() {
         </div>
         <div className="ftr-bottom">
           <span>© {new Date().getFullYear()} HeidSec</span>
-          <span>Impressum · Datenschutz · AGB – rechtliche Texte werden aus dem Bestand übernommen.</span>
+          <span className="ftr-legal">
+            <Link to="/legal/impressum">Impressum</Link>
+            <Link to="/legal/datenschutz">Datenschutz</Link>
+            <Link to="/legal/agb">AGB</Link>
+            <Link to="/legal/widerruf">Widerruf</Link>
+          </span>
         </div>
       </div>
     </footer>

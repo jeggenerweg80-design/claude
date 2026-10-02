@@ -10,6 +10,7 @@ import Security from './pages/Security'
 import Faq from './pages/Faq'
 import Downloads from './pages/Downloads'
 import Login from './pages/Login'
+import Legal from './pages/Legal'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/sicherheit" element={<Security />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/downloads" element={<Downloads />} />
+          <Route path="/legal/:slug" element={<Legal />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

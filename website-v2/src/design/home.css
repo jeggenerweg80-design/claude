@@ -2,7 +2,9 @@
 .hero { position: relative; padding: clamp(110px, 16vw, 168px) 0 clamp(56px, 8vw, 96px); overflow: hidden; isolation: isolate; }
 .hero-bg { position: absolute; inset: 0; z-index: -1; }
 .hero-media { position: absolute; inset: 0; border: 0; border-radius: 0; aspect-ratio: auto; }
+.hero-media .media-fallback { display: none; }
 .hero-veil { position: absolute; inset: 0; background:
+  linear-gradient(90deg, rgba(4,9,19,.82), rgba(4,9,19,.35) 60%, rgba(4,9,19,.1)),
   radial-gradient(60% 55% at 78% 38%, rgba(59,130,255,.22), transparent 70%),
   radial-gradient(40% 40% at 10% 0%, rgba(56,214,255,.12), transparent 70%),
   linear-gradient(180deg, rgba(4,9,19,.2), var(--bg-0) 96%); }
@@ -106,3 +108,8 @@
 
 /* Final CTA */
 .final-in { text-align: center; border: 1px solid var(--line-strong); border-radius: 28px; padding: clamp(44px, 8vw, 96px) var(--gutter); background: radial-gradient(70% 90% at 50% 0%, rgba(56,214,255,.16), transparent 70%), var(--bg-1); display: grid; justify-items: center; gap: 18px; box-shadow: 0 40px 120px -60px var(--cyan-glow); }
+
+.final-in { position: relative; overflow: hidden; isolation: isolate; }
+.final-bg { position: absolute !important; inset: 0; border: 0; border-radius: 0; aspect-ratio: auto; z-index: -2; opacity: .5; }
+.final-bg .media-fallback { display: none; }
+.final-in::after { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(70% 90% at 50% 0%, rgba(4,9,19,.2), rgba(4,9,19,.8)); }

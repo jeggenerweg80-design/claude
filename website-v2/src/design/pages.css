@@ -29,3 +29,12 @@
 
 .prod-page { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
 @media (max-width: 860px) { .prod-page { grid-template-columns: 1fr; } }
+
+.legal article h2 { font-size: 1.3rem; margin: 2em 0 .6em; }
+.legal article p, .legal article li { color: var(--text-dim); margin-bottom: .9em; }
+.legal article ul { list-style: disc; padding-left: 1.4em; }
+.legal mark { background: rgba(255, 190, 60, .18); color: #ffd27a; padding: 0 4px; border-radius: 4px; }
+.legal-nav { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); }
+.legal-nav a { color: var(--cyan); display: inline-block; padding: 8px 0; }
+.media .cutout { position: absolute; z-index: 2; right: 4%; bottom: 0; height: 88%; width: auto; max-width: 46%; object-fit: contain; filter: drop-shadow(0 20px 40px rgba(46,155,255,.35)); }
+.logo img { width: 32px; height: 32px; }

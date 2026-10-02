@@ -1,9 +1,11 @@
 export const siteConfig = {
   name: 'HeidSec',
-  // Kontaktadresse wird per Umgebungsvariable gesetzt; keine erfundene Adresse im Code.
-  contactEmail: (import.meta.env.VITE_CONTACT_EMAIL as string | undefined) ?? '',
+  infoEmail: 'info@heidsec.de',
+  supportEmail: 'support@heidsec.de',
+  // Kundenkonto und Registrierung laufen weiterhin über das bestehende HeidSec-Backend.
+  accountUrl: 'https://www.heidsec.de/login',
+  registerUrl: 'https://www.heidsec.de/register',
+  portalUrl: 'https://www.heidsec.de/mein-konto',
 }
 
-export const contactHref = siteConfig.contactEmail
-  ? `mailto:${siteConfig.contactEmail}?subject=HeidSec%20Business%20Anfrage`
-  : '/geschaeftskunden#anfrage'
+export const contactHref = `mailto:${siteConfig.infoEmail}?subject=HeidSec%20Business%20Anfrage`

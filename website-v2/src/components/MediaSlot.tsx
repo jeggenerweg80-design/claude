@@ -39,7 +39,7 @@ export default function MediaSlot({ slot, ratio = '16/9', className = '', childr
   return (
     <div ref={ref} className={`media ${className}`} style={{ '--ratio': ratio } as CSSProperties} data-slot={slot}>
       {children ?? <div className="media-fallback" aria-hidden="true" />}
-      {hasVideo && def.poster && <img src={def.poster} alt={def.alt} loading="lazy" decoding="async" />}
+      {def?.poster && <img src={def.poster} alt={def.alt} loading="lazy" decoding="async" />}
       {hasVideo && allowVideo && visible && (
         <video autoPlay muted loop playsInline preload="none" poster={def.poster} aria-label={def.alt}>
           {def.sources.map((s) => (
@@ -47,6 +47,7 @@ export default function MediaSlot({ slot, ratio = '16/9', className = '', childr
           ))}
         </video>
       )}
+      {def?.cutout && <img className="cutout" src={def.cutout} alt="" loading="lazy" decoding="async" />}
     </div>
   )
 }

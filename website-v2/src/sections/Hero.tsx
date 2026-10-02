@@ -6,9 +6,7 @@ export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-bg" aria-hidden="true">
-        <MediaSlot slot="hero" ratio="16/9" className="hero-media" posterOnlyOnMobile={false}>
-          <div className="media-fallback" />
-        </MediaSlot>
+        <MediaSlot slot="hero" ratio="16/9" className="hero-media" posterOnlyOnMobile />
         <div className="hero-veil" />
       </div>
       <div className="wrap hero-grid">

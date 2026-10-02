@@ -1,4 +1,4 @@
-// Produktbeschreibungen bewusst knapp und ohne zusätzliche Funktionsversprechen.
+// Produkttexte aus dem Bestand der bestehenden Website übernommen (Messenger: Produktkanon).
 export type ProductId = 'secureapp' | 'messenger' | 'vpn' | 'mailguard' | 'vault'
 
 export interface Product {
@@ -19,10 +19,10 @@ export const products: Product[] = [
     name: 'SecureApp',
     path: '/secureapp',
     kicker: 'Das Herz der Plattform',
-    headline: 'Sicherheit, die dir erklärt, was sie tut.',
+    headline: 'Dein Sicherheitszentrum in der Tasche.',
     summary:
-      'SecureApp erkennt Auffälliges auf deinem Gerät und zeigt es nicht nur an: Mit den KI-Stufen wird aus einem Fund eine verständliche Erklärung und eine konkrete Handlungsempfehlung.',
-    points: ['Tarife FREE, PRO und KI', 'KI-Sicherheitsassistenz im KI-Tarif', 'Gleiches HeidSec-Konto für App und Portal'],
+      'SecureApp scannt dein Smartphone in Echtzeit, prüft Apps und Verbindungen und warnt dich, bevor aus einem Klick ein Problem wird. Mit dem KI-Tarif wird aus einem Fund eine verständliche Erklärung samt Handlungsempfehlung.',
+    points: ['Echtzeit-Scan aller Apps', 'Sofortige Warnung bei Auffälligkeiten', 'Tarife FREE, PRO und KI – ein HeidSec-Konto'],
     mediaSlot: 'product-secureapp',
   },
   {
@@ -40,9 +40,9 @@ export const products: Product[] = [
     name: 'VPN',
     path: '/vpn',
     kicker: 'Add-on · Verbindung',
-    headline: 'Eine geschützte Verbindung, wenn du sie brauchst.',
-    summary: 'Das VPN ergänzt SecureApp als Add-on und ist in Business PRO und Business KI bereits enthalten.',
-    points: ['Add-on für Privatkunden', 'Enthalten in Business PRO & KI'],
+    headline: 'Dein verschlüsselter Tunnel.',
+    summary: 'HeidSec VPN kapselt deine Verbindung und macht deinen Standort unsichtbar – im Hotel-WLAN genauso wie zu Hause. Als Add-on zu SecureApp, in Business PRO und KI enthalten.',
+    points: ['Gekapselte Verbindung', 'Standort bleibt privat', 'Enthalten in Business PRO & KI'],
     addon: true,
     mediaSlot: 'product-vpn',
   },
@@ -51,9 +51,9 @@ export const products: Product[] = [
     name: 'MailGuard',
     path: '/mailguard',
     kicker: 'Add-on · E-Mail',
-    headline: 'Dein Postfach unter Aufsicht.',
-    summary: 'MailGuard erweitert den Schutz auf E-Mails und fügt sich als Add-on in dieselbe Plattform ein.',
-    points: ['Add-on für Privatkunden', 'Teil der gemeinsamen Sicherheitsplattform'],
+    headline: 'Dein Posteingang, befreit.',
+    summary: 'MailGuard hält Phishing, Betrug und schädliche Anhänge fern – bevor sie deinen Posteingang erreichen. Verdächtiges landet lautlos in Quarantäne.',
+    points: ['Erkennung von Phishing und Betrug', 'Lautlose Quarantäne', 'Schutz für alle deine Postfächer'],
     addon: true,
     mediaSlot: 'product-mailguard',
   },
@@ -62,9 +62,9 @@ export const products: Product[] = [
     name: 'Vault',
     path: '/vault',
     kicker: 'Add-on · Schutz sensibler Daten',
-    headline: 'Ein geschützter Platz für das, was zählt.',
-    summary: 'Vault ist das Add-on für den besonders geschützten Umgang mit sensiblen Inhalten – verknüpft mit deinem HeidSec-Konto.',
-    points: ['Add-on für Privatkunden', 'Gleiches HeidSec-Konto'],
+    headline: 'Dein Tresor. Nur deiner.',
+    summary: 'Vault legt Dokumente, Zugänge und Geheimnisse in einen verschlüsselten Raum, zu dem nur du den Schlüssel hältst – auf all deinen Geräten.',
+    points: ['Verschlüsselte Ablage', 'Zugriff nur mit deinem Schlüssel', 'Synchron über alle Geräte'],
     addon: true,
     mediaSlot: 'product-vault',
   },

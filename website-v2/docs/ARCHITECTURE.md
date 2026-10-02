@@ -14,6 +14,14 @@ Eigenständiges Projekt (Vite + React + TypeScript), isoliert unter `website-v2/
 Umgebungsvariablen (optional): `VITE_CONTACT_EMAIL`, `VITE_CHECKOUT_SESSION_URL`.
 Skripte: `npm run dev | build | typecheck | lint`.
 
-## Offen / zu verifizieren
-- Brand-Assets, Logo, rechtliche Texte, Download-Links und Produkttexte aus der bestehenden Website übernehmen (im Repo nicht vorhanden).
-- Produkttexte zu VPN, MailGuard, Vault sind bewusst generisch und müssen gegen den Produktkanon geprüft werden.
+## Quellen (Phase 2)
+Referenz: `website_zum_überarbeiten/heidsec_new/` (unverändert). Übernommen: Logo/Favicons/OG (`public/brand`), Videos und Poster (`public/media`),
+Produkttexte (SecureApp, MailGuard, Vault, VPN), Rechtstexte (`src/content/legal`), Kontaktadressen (`src/config/site.ts`).
+Kein Layout, keine Komponenten, kein CSS übernommen.
+
+## Offen / zu klären
+- Rechtstexte enthalten Platzhalter „[MUSS VOR VERÖFFENTLICHUNG EINGETRAGEN WERDEN …]“ (Firma, Anschrift, Register, USt-ID) – im Bestand ungefüllt, hier markiert.
+- Der Skill `cool-website` ist im Repo nur ein leerer Submodule-Verweis (Commit 3e6fc28…, kein `.gitmodules`) – Inhalt nicht verfügbar.
+- Download-Links: im Bestand nur Platzhalter. Messenger: kein Bestandsmaterial/Video.
+- Der Bestand erwähnt Parental Control/Kinderschutz (AGB, Video) – nicht im Produktkanon, daher nicht auf V2 gezeigt.
+- Backend-Anbindung (Login, Checkout-Session, Stripe-Webhook) folgt; Login verlinkt vorerst auf das bestehende Konto.
