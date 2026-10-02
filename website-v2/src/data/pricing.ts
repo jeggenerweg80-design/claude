@@ -50,6 +50,7 @@ const eur = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' 
 const eurRound = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })
 
 export function formatEur(value: number | null): string {
-  if (value === null) return '–'
+  if (value === null) return 'auf Anfrage'
+  if (value === 0) return '0 €'
   return Number.isInteger(value) && value >= 100 ? eurRound.format(value) : eur.format(value)
 }

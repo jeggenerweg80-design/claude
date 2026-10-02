@@ -12,7 +12,7 @@ export default function Legal() {
   const html = doc.html.replace(PLACEHOLDER, '<mark>$1</mark>')
   return (
     <>
-      <PageHead eyebrow="Rechtliches" title={doc.title} />
+      <PageHead title={doc.title} />
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap narrow legal">
           {html.includes('<mark>') && (

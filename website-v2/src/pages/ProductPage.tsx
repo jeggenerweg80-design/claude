@@ -10,7 +10,7 @@ export default function ProductPage({ id }: { id: ProductId }) {
   const addon = addons.find((a) => a.id === id)
   return (
     <>
-      <PageHead eyebrow={p.kicker} title={<>{p.name}. <span className="grad">{p.headline}</span></>} lead={p.summary}>
+      <PageHead title={<>{p.name}. <span className="grad">{p.headline}</span></>} lead={p.summary}>
         <div className="hero-actions"><Link className="btn btn-primary" to="/preise">Preise ansehen</Link><Link className="btn btn-ghost" to="/downloads">Downloads</Link></div>
       </PageHead>
       <section className="section" style={{ paddingTop: 0 }}>

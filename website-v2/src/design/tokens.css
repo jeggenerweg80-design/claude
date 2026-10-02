@@ -1,26 +1,50 @@
 :root {
+  /* Farbrollen: Canvas, Surface, Ink, Ink-soft, ein Akzent */
   --bg-0: #05070b;
-  --bg-1: #07122a;
-  --bg-2: #0b1a3a;
-  --line: rgba(120, 170, 255, 0.14);
-  --line-strong: rgba(120, 190, 255, 0.28);
-  --text: #eaf2ff;
-  --text-dim: #9db2d3;
-  --text-faint: #6f86ab;
-  --cyan: #38d6ff;
-  --blue: #3b82ff;
-  --cyan-glow: rgba(56, 214, 255, 0.35);
+  --bg-1: #0a1220;
+  --bg-2: #0f1c33;
+  --text: #eef3fb;
+  --text-dim: #a3b4cf;
+  --text-faint: #7589a8;
+  --cyan: #35e0ff;
+  --blue: #2e9bff;
+  --accent-ink: #00131f;
+  --line: rgba(140, 180, 255, 0.13);
+  --line-strong: rgba(140, 190, 255, 0.26);
+  --edge: rgba(190, 225, 255, 0.14);
   --ok: #4ade9a;
-  --font: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
-  --gutter: clamp(16px, 4vw, 48px);
-  --maxw: 1240px;
-  --section-y: clamp(64px, 9vw, 120px);
-  --radius: 14px;
+  /* Schrift: Markenschriften des Bestands (Space Grotesk Display, Inter Text) */
+  --font-display: 'Space Grotesk Variable', 'Inter Variable', system-ui, sans-serif;
+  --font: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
 
-  --fs-hero: clamp(2.4rem, 5vw + 0.6rem, 4.5rem);
-  --fs-h2: clamp(1.9rem, 3.6vw + 0.5rem, 3.25rem);
-  --fs-h3: clamp(1.2rem, 1vw + 1rem, 1.5rem);
-  --fs-lead: clamp(1.05rem, 0.6vw + 0.95rem, 1.3rem);
+  --t-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.82rem);
+  --t-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.95rem);
+  --t-base: clamp(1rem, 0.96rem + 0.22vw, 1.125rem);
+  --t-lg: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --t-xl: clamp(1.6rem, 1.35rem + 1.2vw, 2.25rem);
+  --t-2xl: clamp(2rem, 1.5rem + 2.4vw, 3.4rem);
+  --t-hero: clamp(2.3rem, 1rem + 3.7vw, 3.9rem);
+  --track-tight: -0.035em;
+  --track-snug: -0.02em;
+
+  /* Raum: 4px-Basis */
+  --s-1: .25rem; --s-2: .5rem; --s-3: .75rem; --s-4: 1rem; --s-5: 1.5rem;
+  --s-6: 2rem; --s-7: 3rem; --s-8: 4rem; --s-9: 6rem;
+  --gutter: clamp(1.25rem, 4.5vw, 4rem);
+  --maxw: 77rem;
+  --section-y: clamp(3.5rem, 8vw, 8.5rem);
+  --measure: 60ch;
+
+  /* Radien: eine Skala */
+  --r-sm: 8px; --r-md: 14px; --r-lg: 22px; --r-pill: 999px;
+
+  /* Erhebung: Offset + weicher Blur, auf Canvas-Ton getönt */
+  --shadow-c: 220 60% 2%;
+  --e1: 0 1px 2px hsl(var(--shadow-c) / .35), 0 2px 6px -1px hsl(var(--shadow-c) / .25);
+  --e2: 0 2px 4px hsl(var(--shadow-c) / .3), 0 10px 24px -6px hsl(var(--shadow-c) / .5);
+  --e3: 0 4px 8px hsl(var(--shadow-c) / .3), 0 22px 48px -10px hsl(var(--shadow-c) / .6), 0 56px 100px -30px hsl(var(--shadow-c) / .5);
+
+  /* Bewegung */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }

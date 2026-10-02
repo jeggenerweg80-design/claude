@@ -9,7 +9,7 @@ export default function Business() {
   const [interval, setInterval] = useState<Interval>('month')
   return (
     <>
-      <PageHead eyebrow="Geschäftskunden" title={<>Eine Plattform für <span className="grad">jedes Gerät im Unternehmen</span>.</>} lead="Business PRO Complete und Business KI Complete – jeweils inklusive Messenger und VPN, für 10 bis 50 Geräte.">
+      <PageHead title={<>Eine Plattform für <span className="grad">jedes Gerät im Unternehmen</span>.</>} lead="Business PRO Complete und Business KI Complete, jeweils inklusive Messenger und VPN, für 10 bis 50 Geräte.">
         <IntervalToggle value={interval} onChange={setInterval} />
       </PageHead>
       <section className="section" style={{ paddingTop: 0 }}>

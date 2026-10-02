@@ -18,7 +18,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'Was ist in den Business-Tarifen enthalten?',
-    a: 'Business PRO Complete und Business KI Complete enthalten Messenger und VPN. Business KI stellt zusätzlich 20 KI-Analysen pro Gerät und Monat bereit – als gemeinsamer Pool für das gesamte Unternehmen.',
+    a: 'Business PRO Complete und Business KI Complete enthalten Messenger und VPN. Business KI stellt zusätzlich 20 KI-Analysen pro Gerät und Monat bereit, als gemeinsamer Pool für das gesamte Unternehmen.',
   },
   {
     q: 'Was gilt für mehr als 50 Geräte?',

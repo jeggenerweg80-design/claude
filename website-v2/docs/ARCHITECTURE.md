@@ -25,3 +25,10 @@ Kein Layout, keine Komponenten, kein CSS übernommen.
 - Download-Links: im Bestand nur Platzhalter. Messenger: kein Bestandsmaterial/Video.
 - Der Bestand erwähnt Parental Control/Kinderschutz (AGB, Video) – nicht im Produktkanon, daher nicht auf V2 gezeigt.
 - Backend-Anbindung (Login, Checkout-Session, Stripe-Webhook) folgt; Login verlinkt vorerst auf das bestehende Konto.
+
+## Skill-Polish (cool-website)
+Gezielter Feinschliff nach dem Skill, ohne Neubau: Markenschriften (Space Grotesk/Inter, selbst gehostet), Tokens (4px-Raster, eine Radienskala,
+Elevation mit Offset statt Glow, Kornschicht), Hero in Tiefenebenen (`src/hooks/useHeroDepth.ts`: Medienbett 0,31x, Subjekt 0,17x, Vorderlicht gegenläufig, Text 1x;
+Zeigerreaktion nur bei feinem Zeiger), Medien per Maske vom Text weggeblendet statt Verdunkelungs-Overlay, vier Layout-Familien in der Plattform-Sektion,
+Eintritt Opacity + 14px, UI-Transitions unter 300 ms, Press-Feedback, Reduced Motion = weniger statt null. Die Engine (`cool-website/engine`) wird nicht verwendet.
+Rechtstexte aus dem Bestand bleiben textlich unverändert (enthalten teils Gedankenstriche).

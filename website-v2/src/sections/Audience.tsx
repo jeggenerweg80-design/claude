@@ -7,7 +7,6 @@ export default function Audience() {
     <section className="section split" aria-labelledby="aud-h">
       <div className="wrap">
         <Reveal className="sec-head">
-          <p className="eyebrow">Für wen</p>
           <h2 id="aud-h" className="h2">Für dich. Und für dein Unternehmen.</h2>
         </Reveal>
         <div className="aud">
@@ -19,7 +18,7 @@ export default function Audience() {
           </Reveal>
           <Reveal className="aud-side biz" delay={100}>
             <h3>Geschäftskunden</h3>
-            <p className="dim">Business PRO Complete und Business KI Complete für 10 bis 50 Geräte – inklusive Messenger und VPN. Darüber hinaus individuell.</p>
+            <p className="dim">Business PRO Complete und Business KI Complete für 10 bis 50 Geräte, inklusive Messenger und VPN. Darüber hinaus individuell.</p>
             <p className="aud-price">ab <strong>{formatEur(59.9)}</strong> <small>/ Monat · 10 Geräte</small></p>
             <Link className="link" to="/geschaeftskunden">Geschäftskunden-Angebot <span className="arrow" aria-hidden="true">→</span></Link>
           </Reveal>

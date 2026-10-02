@@ -8,7 +8,6 @@ export default function FaqPreview() {
     <section className="section" aria-labelledby="faq-h">
       <div className="wrap faq-grid">
         <Reveal>
-          <p className="eyebrow">FAQ</p>
           <h2 id="faq-h" className="h2">Kurz beantwortet.</h2>
           <p style={{ marginTop: 20 }}><Link className="link" to="/faq">Alle Fragen <span className="arrow" aria-hidden="true">→</span></Link></p>
         </Reveal>

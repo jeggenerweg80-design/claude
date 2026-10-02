@@ -6,7 +6,7 @@ import PricePair from '../components/PricePair'
 export default function Consumer() {
   return (
     <>
-      <PageHead eyebrow="Privatkunden" title={<>SecureApp für <span className="grad">dein Zuhause</span>.</>} lead="Drei Tarife, drei Add-ons, ein Konto." />
+      <PageHead title={<>SecureApp für <span className="grad">dein Zuhause</span>.</>} lead="Drei Tarife, drei Add-ons, ein Konto." />
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <div className="plans">{consumerPlans.map((p) => <div key={p.id} className={`plan ${p.featured ? 'feat' : ''}`}><h3>{p.name}</h3><p className="dim">{p.tagline}</p><PricePair price={p.price} interval="month" /><PricePair price={p.price} interval="year" /></div>)}</div>

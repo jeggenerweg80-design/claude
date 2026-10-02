@@ -20,7 +20,7 @@ export default function Pricing() {
 
   return (
     <>
-      <PageHead eyebrow="Preise" title={<>Alle Tarife. <span className="grad">Auf einen Blick.</span></>} lead="Privatkunden und Unternehmen – monatlich oder jährlich.">
+      <PageHead title={<>Alle Tarife. <span className="grad">Auf einen Blick.</span></>} lead="Privatkunden und Unternehmen, monatlich oder jährlich.">
         <IntervalToggle value={interval} onChange={setInterval} />
         <p className="notice" role="status" aria-live="polite">{msg}</p>
       </PageHead>
@@ -48,7 +48,7 @@ export default function Pricing() {
           <h2 id="p-b" className="h3">Geschäftskunden</h2>
           <p className="dim">Business PRO Complete und Business KI Complete enthalten Messenger und VPN. Business KI: {businessKiPoolPerDevice} KI-Analysen pro Gerät und Monat als gemeinsamer Unternehmenspool.</p>
           <BusinessTable interval={interval} onBuy={(plan, devices) => buy({ kind: 'business', plan, devices, interval })} />
-          <p className="dim mt">Mehr als 50 Geräte: individuell – <a className="link" href={contactHref}>Kontakt aufnehmen</a></p>
+          <p className="dim mt">Mehr als 50 Geräte: individuell, <a className="link" href={contactHref}>Kontakt aufnehmen</a></p>
         </div>
       </section>
     </>

@@ -22,13 +22,13 @@ export default function Header() {
   return (
     <header className={`hdr ${scrolled ? 'scrolled' : ''} ${open ? 'open' : ''}`}>
       <div className="wrap hdr-in">
-        <Link to="/" aria-label="HeidSec – Startseite"><Logo /></Link>
+        <Link to="/" aria-label="HeidSec Startseite"><Logo /></Link>
         <nav className="nav" aria-label="Hauptnavigation">
           {primaryNav.map((n) => <NavLink key={n.to} to={n.to}>{n.label}</NavLink>)}
         </nav>
         <div className="hdr-cta">
           <Link className="btn btn-ghost btn-sm" to="/login">Login</Link>
-          <Link className="btn btn-primary btn-sm" to="/preise">Kaufen</Link>
+          <Link className="btn btn-primary btn-sm" to="/preise">Tarife ansehen</Link>
           <button className="menu-btn" aria-expanded={open} aria-controls="drawer" aria-label={open ? 'Menü schließen' : 'Menü öffnen'} onClick={() => setOpen((o) => !o)}>
             <span />
           </button>
@@ -40,7 +40,7 @@ export default function Header() {
           <Link to="/faq" tabIndex={open ? 0 : -1}>FAQ</Link>
           <Link to="/downloads" tabIndex={open ? 0 : -1}>Downloads</Link>
           <Link to="/login" tabIndex={open ? 0 : -1}>Login</Link>
-          <Link className="btn btn-primary" to="/preise" tabIndex={open ? 0 : -1}>Kaufen</Link>
+          <Link className="btn btn-primary" to="/preise" tabIndex={open ? 0 : -1}>Tarife ansehen</Link>
         </nav>
       </div>
     </header>

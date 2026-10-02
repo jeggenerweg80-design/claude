@@ -4,7 +4,7 @@ import { siteConfig } from '../config/site'
 export default function Login() {
   return (
     <>
-      <PageHead eyebrow="Login" title={<>Dein <span className="grad">HeidSec-Konto</span>.</>} lead="Das Kundenportal verwendet dasselbe Konto wie die App. Die Anmeldung läuft über das bestehende HeidSec-Backend." />
+      <PageHead title={<>Dein <span className="grad">HeidSec-Konto</span>.</>} lead="Das Kundenportal verwendet dasselbe Konto wie die App. Die Anmeldung läuft über das bestehende HeidSec-Backend." />
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap narrow plans">
           <div className="plan feat"><h3>Anmelden</h3><p className="dim">Zum bestehenden Kundenkonto.</p><a className="btn btn-primary btn-sm" href={siteConfig.accountUrl}>Zum Login</a></div>
