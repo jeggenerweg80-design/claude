@@ -8,6 +8,7 @@ import './design/components.css'
 import './design/home.css'
 import './design/pages.css'
 import './b/b.css'
+import './b/pages.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

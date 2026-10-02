@@ -46,3 +46,8 @@ Key-Value-Zeilen (Label gedämpft links, Wert weiß rechts), Segment-Chips (FREE
 Nicht übernommen: Preise, Gerätezahlen, KI-Kontingente, Accountdaten, Runtime-Werte, Entitlements (Website nutzt nur den Produktkanon).
 Amber/Gold ist in der App nicht nur Warnfarbe: Der aktive Messenger-Tab nutzt es als Navigations-Akzent. Website: Amber (`--gold`) sparsam, für den aktiven Hauptnavigations-Eintrag und Warn-Chips.
 Zusätzlich aus Messenger Home / Neue Gruppe: App-Icon-Kachel (blauer Verlauf), Quick-Action-Kacheln (mobil), getönte Pill-Chips (Verifiziert grün, Nicht verifiziert amber, Zähler blau), ausgewählte Listenzeile mit kräftigerem Blau-Border, deaktivierter Primary-Button in gedimmtem Blau.
+
+## Concept B, Privatkunden / Geschäftskunden / Preise
+Neu in `src/b/pages/` (PrivatePage, BusinessPage, PricingPage) und `src/b/pricing/blocks.tsx` (PriceStack, PrivateComparison, AddonRows, BusinessConfigurator), Stil in `src/b/pages.css`.
+Preise ausschließlich aus `src/data/pricing.ts`; keine Berechnung außer KI-Pool (Geräte x 20). Kein Checkout: Online-Kauf wird ehrlich als noch nicht aktiv ausgewiesen.
+Privat: Tarifvergleich nur mit kanonisch belegten Zeilen (SecureApp, KI-Sicherheitsassistenz nur im KI-Tarif, Zusatzmodule separat). Der genaue Funktionsumfang je Tarif liegt im Repo nicht vor und ist vor Livegang zu ergänzen.

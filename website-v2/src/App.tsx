@@ -3,9 +3,9 @@ import BHeader from './b/BHeader'
 import BFooter from './b/BFooter'
 import BHome from './b/BHome'
 import ProductPage from './pages/ProductPage'
-import Pricing from './pages/Pricing'
-import Business from './pages/Business'
-import Consumer from './pages/Consumer'
+import PricingPage from './b/pages/PricingPage'
+import BusinessPage from './b/pages/BusinessPage'
+import PrivatePage from './b/pages/PrivatePage'
 import Security from './pages/Security'
 import Faq from './pages/Faq'
 import Downloads from './pages/Downloads'
@@ -26,9 +26,9 @@ export default function App() {
           <Route path="/vpn" element={<ProductPage id="vpn" />} />
           <Route path="/mailguard" element={<ProductPage id="mailguard" />} />
           <Route path="/vault" element={<ProductPage id="vault" />} />
-          <Route path="/privatkunden" element={<Consumer />} />
-          <Route path="/geschaeftskunden" element={<Business />} />
-          <Route path="/preise" element={<Pricing />} />
+          <Route path="/privatkunden" element={<PrivatePage />} />
+          <Route path="/geschaeftskunden" element={<BusinessPage />} />
+          <Route path="/preise" element={<PricingPage />} />
           <Route path="/sicherheit" element={<Security />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/downloads" element={<Downloads />} />
