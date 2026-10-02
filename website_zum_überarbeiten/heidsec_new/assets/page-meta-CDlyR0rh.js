@@ -1,0 +1,1 @@
+function m(n){if(typeof document>"u")return;document.title=n.title;const e=document.querySelector('meta[name="robots"]');if(n.noindex){const o=e??(()=>{const t=document.createElement("meta");return t.name="robots",document.head.appendChild(t),t})();o.content="noindex, nofollow"}else e&&e.remove()}export{m as s};

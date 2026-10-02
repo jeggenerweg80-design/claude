@@ -1,0 +1,23 @@
+# HeidSec Messenger Relay (Messaging-/Network-Umfang)
+# Mailbox data, lock files and atomic-write temp files must never be reachable
+# directly — access runs exclusively through index.php. (FilesMatch only:
+# DirectoryMatch is not valid in .htaccess context.)
+
+Options -Indexes
+
+<FilesMatch "\.(json|lock|tmp)$">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# Production client contract: POST /api/messenger/ack (endungsbasiert, ohne
+# trailing slash). Der Subpfad ist hier keine physische Datei — intern an
+# diesen Relay-Handler umleiten, damit ACK mit exakt dem dokumentierten
+# Endpunkt ankommt (kein Legacy-/Slash-Fallback im Client).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^ack$ index.php [L]
+</IfModule>

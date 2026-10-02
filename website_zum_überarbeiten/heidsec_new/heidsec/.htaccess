@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Existierende Dateien und Ordner normal ausliefern
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Alle React-Routen auf die neue index.html
+RewriteRule ^ index.html [L]
