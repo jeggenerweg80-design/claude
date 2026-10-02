@@ -40,8 +40,11 @@ export default function PlatformConsole() {
             <div className="b-pane" id="b-pane" role="tabpanel" aria-labelledby={`b-tab-${m.id}`}>
               <MediaSlot key={m.id} slot={m.id} def={def} ratio="16/9" className="b-pane-media" posterOnlyOnMobile />
               <div className="b-pane-copy" key={`c-${m.id}`}>
-                <p className="b-pane-role">{m.role}</p>
-                <h3>{m.label}</h3>
+                <div className="b-pane-head">
+                  <span className="b-app-tile" aria-hidden="true">{m.icon}</span>
+                  <div><p className="b-pane-role">{m.role}</p><h3>{m.label}</h3></div>
+                  {m.badge && <span className="chip info">{m.badge}</span>}
+                </div>
                 <p>{m.summary}</p>
                 <ul className="ticks">{m.points.map((p) => <li key={p}>{p}</li>)}</ul>
                 <Link className="link" to={m.to}>{m.linkLabel} <span className="arrow" aria-hidden="true">→</span></Link>

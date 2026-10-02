@@ -13,6 +13,7 @@ export interface BModule {
   video?: string
   poster: string
   icon: ReactNode
+  badge?: string
 }
 
 const i = (d: string) => (
@@ -32,7 +33,7 @@ export const modules: BModule[] = [
     id: 'ki', label: 'KI-Assistenz', role: 'Erklärung und Handlung',
     summary: 'Die KI zeigt nicht nur einen Fund an. Sie macht Sicherheitsereignisse verständlich und leitet konkrete Handlungsmöglichkeiten ab.',
     points: ['Verständliche Erklärung statt Fachbegriff', 'Handlungsmöglichkeiten für jeden Fund', 'Enthalten im KI-Tarif'],
-    to: '/preise', linkLabel: 'KI-Tarif ansehen', video: '/media/video-core.mp4', poster: '/media/plate-core.webp',
+    to: '/preise', badge: 'KI-Tarif', linkLabel: 'KI-Tarif ansehen', video: '/media/video-core.mp4', poster: '/media/plate-core.webp',
     icon: i('M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18'),
   },
   {
@@ -46,21 +47,21 @@ export const modules: BModule[] = [
     id: 'mailguard', label: 'MailGuard', role: 'Mail-Schutz',
     summary: 'MailGuard hält Phishing, Betrug und schädliche Anhänge fern, bevor sie deinen Posteingang erreichen. Verdächtiges landet lautlos in Quarantäne.',
     points: ['Erkennung von Phishing und Betrug', 'Lautlose Quarantäne', 'Schutz für alle deine Postfächer'],
-    to: '/mailguard', linkLabel: 'MailGuard ansehen', video: '/media/video-mailguard.mp4', poster: '/media/plate-mailguard.webp',
+    to: '/mailguard', badge: 'Add-on', linkLabel: 'MailGuard ansehen', video: '/media/video-mailguard.mp4', poster: '/media/plate-mailguard.webp',
     icon: i('M3 6h18v12H3V6zm0 1l9 6 9-6'),
   },
   {
     id: 'vpn', label: 'VPN', role: 'Netzwerkschutz',
     summary: 'HeidSec VPN kapselt deine Verbindung und macht deinen Standort unsichtbar, im Hotel-WLAN genauso wie zu Hause.',
     points: ['Gekapselte Verbindung', 'Standort bleibt privat', 'Enthalten in Business PRO und KI'],
-    to: '/vpn', linkLabel: 'VPN ansehen', video: '/media/video-vpn.mp4', poster: '/media/plate-vpn.webp',
+    to: '/vpn', badge: 'Add-on', linkLabel: 'VPN ansehen', video: '/media/video-vpn.mp4', poster: '/media/plate-vpn.webp',
     icon: i('M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z'),
   },
   {
     id: 'vault', label: 'Vault', role: 'Datenschutz und Ablage',
     summary: 'Vault legt Dokumente, Zugänge und Geheimnisse in einen verschlüsselten Raum, zu dem nur du den Schlüssel hältst, auf all deinen Geräten.',
     points: ['Verschlüsselte Ablage', 'Zugriff nur mit deinem Schlüssel', 'Synchron über alle Geräte'],
-    to: '/vault', linkLabel: 'Vault ansehen', video: '/media/video-vault.mp4', poster: '/media/plate-vault.webp',
+    to: '/vault', badge: 'Add-on', linkLabel: 'Vault ansehen', video: '/media/video-vault.mp4', poster: '/media/plate-vault.webp',
     icon: i('M5 11h14v9H5v-9zM8 11V8a4 4 0 118 0v3'),
   },
 ]

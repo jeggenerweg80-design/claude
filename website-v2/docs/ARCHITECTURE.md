@@ -44,4 +44,5 @@ Nur visuelle Referenz. Übernommen: Grundfläche ~#050c1e, Navy-Surfaces ~#0e1a3
 Primary Action in kräftigem App-Blau als Pill, Text-Buttons in Link-Blau, Großbuchstaben-Sektionslabels in Blau-Grau, Listenzeilen mit nackten Outline-Icons + Chevron,
 Key-Value-Zeilen (Label gedämpft links, Wert weiß rechts), Segment-Chips (FREE/PRO/KI) und Segmentierung mit gefülltem Blau, Status-Chips (Grün sicher, Amber Warnung).
 Nicht übernommen: Preise, Gerätezahlen, KI-Kontingente, Accountdaten, Runtime-Werte, Entitlements (Website nutzt nur den Produktkanon).
-Bewusste Abweichung: Die App markiert die aktive Bottom-Nav in Amber; auf der Website bleibt Amber auf Warnzustände beschränkt.
+Amber/Gold ist in der App nicht nur Warnfarbe: Der aktive Messenger-Tab nutzt es als Navigations-Akzent. Website: Amber (`--gold`) sparsam, für den aktiven Hauptnavigations-Eintrag und Warn-Chips.
+Zusätzlich aus Messenger Home / Neue Gruppe: App-Icon-Kachel (blauer Verlauf), Quick-Action-Kacheln (mobil), getönte Pill-Chips (Verifiziert grün, Nicht verifiziert amber, Zähler blau), ausgewählte Listenzeile mit kräftigerem Blau-Border, deaktivierter Primary-Button in gedimmtem Blau.

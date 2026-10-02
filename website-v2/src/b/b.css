@@ -16,7 +16,8 @@
   --primary: #2f7ff7;        /* Primary Actions (App-Blau) */
   --primary-hi: #4690ff;
   --ok: #34d399;             /* nur sicher/verifiziert */
-  --warn: #f5b942;           /* nur Warnung/ungeklärt */
+  --warn: #f5b942;
+  --gold: #f5b942;           /* selektiver Navigations-/Fokus-Akzent, wie der aktive Messenger-Tab der App */           /* nur Warnung/ungeklärt */
   --line: #14295a;
   --line-strong: #1f3b78;     /* Karten-Border */
   --edge: rgba(150, 195, 255, 0.07);
@@ -32,15 +33,15 @@ body { background: var(--bg-0); line-height: 1.58; }
 .btn { border-radius: var(--r-btn); }
 .btn-primary { background: var(--primary); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.18), var(--e1); }
 .btn-ghost { background: var(--bg-1); border-color: var(--line-strong); }
+.btn-primary[disabled] { background: #1d4a98; color: #7f9bcc; box-shadow: none; opacity: 1; }
 @media (hover: hover) and (pointer: fine) { .btn-primary:hover { background: var(--primary-hi); box-shadow: inset 0 1px 0 rgba(255,255,255,.22), var(--e2); } .btn-ghost:hover { border-color: var(--blue); background: var(--bg-2); } }
 body::after { display: none; }
 .link { color: var(--link); font-weight: 600; }
 .btn-ghost { color: var(--link); background: var(--bg-1); border-color: var(--line-strong); }
-.chip { display: inline-flex; align-items: center; gap: .4rem; min-height: 26px; padding: 0 .65rem; border-radius: 9px; border: 1px solid var(--line-strong); background: var(--bg-2); color: var(--text-dim); font-size: .74rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
-.chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-.chip.info { color: var(--cyan); border-color: rgba(53,216,245,.35); }
-.chip.ok { color: var(--ok); border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
-.chip.warn { color: var(--warn); border-color: rgba(245,185,66,.4); background: rgba(245,185,66,.08); }
+.chip { display: inline-flex; align-items: center; min-height: 28px; padding: 0 .8rem; border-radius: 999px; border: 1px solid transparent; background: var(--bg-2); color: var(--text-dim); font-size: .78rem; font-weight: 600; white-space: nowrap; }
+.chip.info { color: var(--link); background: rgba(47, 127, 247, .16); }
+.chip.ok { color: #3ddc97; background: rgba(34, 197, 130, .14); }
+.chip.warn { color: #f5b042; background: rgba(245, 158, 50, .15); }
 
 /* ---------- Kopfleiste: kompakt wie eine App-Topbar ---------- */
 .b-hdr { position: sticky; top: 0; z-index: 60; background: var(--bg-0); border-bottom: 1px solid var(--line); }
@@ -48,7 +49,8 @@ body::after { display: none; }
 .b-hdr .logo { font-size: 1rem; min-height: 40px; }
 .b-nav { display: flex; gap: 2px; }
 .b-nav a { padding: 8px 12px; border-radius: 10px; color: var(--text-dim); font-size: .9rem; min-height: 40px; display: inline-flex; align-items: center; transition: color .16s var(--ease-out), background-color .16s var(--ease-out); }
-.b-nav a[aria-current='page'] { color: var(--text); background: var(--bg-2); }
+.b-nav a[aria-current='page'] { color: var(--gold); background: transparent; position: relative; font-weight: 600; }
+.b-nav a[aria-current='page']::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 2px; border-radius: 2px; background: var(--gold); }
 @media (hover: hover) and (pointer: fine) { .b-nav a:hover { color: var(--text); background: var(--bg-1); } }
 .b-hdr-cta { display: flex; gap: .5rem; align-items: center; }
 .btn-sm { min-height: 40px; padding: 0 1rem; font-size: .88rem; }
@@ -94,13 +96,13 @@ body::after { display: none; }
 .b-node { position: absolute; z-index: 3; transform: translate(-50%, -50%); display: flex; align-items: center; gap: .8rem; min-height: 56px; padding: .6rem 1.1rem .6rem .95rem; text-align: left;
   border-radius: 22px; border: 1px solid var(--line-strong); background: var(--bg-1);
   transition: border-color .18s var(--ease-out), background-color .18s var(--ease-out); }
-.b-node-ic { display: grid; place-items: center; color: var(--text-dim); flex: none; transition: color .18s; }
+.b-node-ic { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 13px; color: var(--link); background: rgba(47, 127, 247, .16); flex: none; transition: color .18s, background-color .18s; }
 .b-node-tx { display: grid; line-height: 1.2; }
 .b-node-tx b { font-size: .98rem; font-weight: 600; } .b-node-tx small { font-size: .8rem; color: var(--text-dim); }
 .b-node.on { border-color: var(--cyan); background: var(--bg-2); }
-.b-node.on .b-node-ic { color: var(--cyan); }
+.b-node.on .b-node-ic { color: var(--cyan); background: rgba(53, 216, 245, .12); }
 .b-node.alert { border-color: var(--warn); }
-.b-node.alert .b-node-ic { color: var(--warn); }
+.b-node.alert .b-node-ic { color: var(--warn); background: rgba(245, 158, 50, .15); }
 
 .b-rail-wrap { position: relative; z-index: 4; padding-bottom: 1rem; margin-top: .25rem; }
 .b-rail { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.25rem; padding: .7rem 1rem; border-radius: var(--r-lg); border: 1px solid var(--line-strong); background: var(--bg-1); box-shadow: inset 0 1px 0 var(--edge), var(--e2); }
@@ -136,7 +138,7 @@ body::after { display: none; }
   .b-node:last-of-type { grid-column: 1 / -1; }
   .b-rail-wrap { margin-top: .75rem; }
   .b-rail { grid-template-columns: 1fr; gap: .6rem; }
-  .b-steps { display: grid; grid-template-columns: 1fr 1fr; }
+  .b-steps { display: grid; grid-template-columns: 1fr 1fr; border-radius: 24px; }
   .b-play { justify-self: start; }
   .b-readout { grid-row: auto; }
 }
@@ -162,7 +164,7 @@ body::after { display: none; }
   transition: background-color .16s var(--ease-out), border-color .16s var(--ease-out), color .16s var(--ease-out), transform .12s var(--ease-out); }
 .b-side button:active { transform: scale(.98); }
 @media (hover: hover) and (pointer: fine) { .b-side button:hover { background: var(--bg-2); color: var(--text); } }
-.b-side button[aria-selected='true'] { background: var(--bg-2); border-color: var(--cyan); color: var(--text); }
+.b-side button[aria-selected='true'] { background: var(--bg-2); border-color: #2f6fe0; color: var(--text); }
 .b-side-ic { display: grid; place-items: center; color: var(--text-dim); flex: none; transition: color .16s; }
 .b-side button[aria-selected='true'] .b-side-ic { color: var(--cyan); }
 .b-side button::after { content: ''; width: 8px; height: 8px; margin-left: auto; border-top: 2px solid var(--text-faint); border-right: 2px solid var(--text-faint); transform: rotate(45deg); flex: none; }
@@ -194,7 +196,7 @@ body::after { display: none; }
   transition: background-color .16s var(--ease-out), border-color .16s var(--ease-out), transform .12s var(--ease-out); }
 .b-plan-list button:active { transform: scale(.99); }
 @media (hover: hover) and (pointer: fine) { .b-plan-list button:hover { background: var(--bg-2); } }
-.b-plan-list button.on { background: var(--bg-2); border-color: var(--cyan); }
+.b-plan-list button.on { background: var(--bg-2); border-color: #2f6fe0; }
 .b-plan-list span { display: grid; line-height: 1.25; } .b-plan-list b { font-size: .98rem; } .b-plan-list small { color: var(--text-faint); font-size: .8rem; }
 .b-plan-list .price { white-space: nowrap; } .b-plan-list .price strong { font-size: 1.2rem; }
 .b-plan-side { display: grid; gap: .55rem; padding: 1.1rem 1.25rem; align-content: start; justify-items: start; }
@@ -276,3 +278,17 @@ body::after { display: none; }
 .b-plan-main, .b-plan-side { justify-items: stretch; align-content: start; }
 .b-plan-main .btn { justify-self: start; }
 .b-chips { justify-self: start; }
+
+/* App-Icon-Kachel (blauer Verlauf, weißes Icon) wie im Messenger-Kopf */
+.b-pane-head { display: flex; align-items: center; gap: .9rem; flex-wrap: wrap; }
+.b-pane-head > div { display: grid; gap: .1rem; }
+.b-pane-head .chip { margin-left: auto; }
+.b-app-tile { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 17px; color: #fff; background: linear-gradient(160deg, #3b8bff, #1f5fd6); flex: none; }
+.b-app-tile svg { width: 26px; height: 26px; }
+
+/* Mobile: Hero-Bausteine als Schnellaktions-Kacheln (Icon-Fläche über Label, mittig), wie die Messenger-Startseite */
+@media (max-width: 900px) {
+  .b-node { flex-direction: column; justify-content: center; text-align: center; gap: .5rem; min-height: 6.2rem; padding: .9rem .6rem; border-radius: 22px; }
+  .b-node-tx { justify-items: center; }
+  .b-node-ic { width: 44px; height: 44px; border-radius: 15px; }
+}
