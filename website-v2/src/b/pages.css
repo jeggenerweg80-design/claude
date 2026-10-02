@@ -116,3 +116,4 @@
   .bp-rows li > .bp-ic ~ .bp-price { padding-left: calc(40px + .8rem); }
 }
 @media (max-width: 360px) { .b-hdr-cta .btn-primary { display: none; } }
+.bp-with { display: grid; gap: .15rem; } .bp-with small { color: var(--text-dim); font-size: .8rem; padding-left: 1.6rem; }

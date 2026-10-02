@@ -30,8 +30,9 @@ const No = () => <span className="bp-no">Nicht enthalten</span>
 export function PrivateComparison({ interval }: { interval: Interval }) {
   const rows: Array<{ label: string; cell: (id: 'free' | 'pro' | 'ki') => React.ReactNode }> = [
     { label: 'SecureApp', cell: () => <Check label="Enthalten" /> },
-    { label: 'KI-Sicherheitsassistenz', cell: (id) => (id === 'ki' ? <Check label="Enthalten" /> : <No />) },
-    { label: 'Zusatzmodule', cell: () => <span className="bp-dim">Separat buchbar</span> },
+    { label: 'KI-Sicherheitsassistenz', cell: (id) => (id === 'ki' ? <span className="bp-with"><Check label="Enthalten" /><small>20 KI-Analysen / Monat</small></span> : <No />) },
+    { label: 'Parental Control', cell: (id) => (id === 'free' ? <No /> : <Check label="Enthalten" />) },
+    { label: 'VPN, MailGuard, Vault', cell: () => <span className="bp-dim">Separate Add-ons</span> },
   ]
   return (
     <div className="bp-compare">

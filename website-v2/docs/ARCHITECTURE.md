@@ -50,4 +50,4 @@ Zusätzlich aus Messenger Home / Neue Gruppe: App-Icon-Kachel (blauer Verlauf), 
 ## Concept B, Privatkunden / Geschäftskunden / Preise
 Neu in `src/b/pages/` (PrivatePage, BusinessPage, PricingPage) und `src/b/pricing/blocks.tsx` (PriceStack, PrivateComparison, AddonRows, BusinessConfigurator), Stil in `src/b/pages.css`.
 Preise ausschließlich aus `src/data/pricing.ts`; keine Berechnung außer KI-Pool (Geräte x 20). Kein Checkout: Online-Kauf wird ehrlich als noch nicht aktiv ausgewiesen.
-Privat: Tarifvergleich nur mit kanonisch belegten Zeilen (SecureApp, KI-Sicherheitsassistenz nur im KI-Tarif, Zusatzmodule separat). Der genaue Funktionsumfang je Tarif liegt im Repo nicht vor und ist vor Livegang zu ergänzen.
+Privat: Tarifvergleich nur mit kanonisch belegten Zeilen (SecureApp, KI-Sicherheitsassistenz nur im KI-Tarif, Zusatzmodule separat). Owner-bestätigte Matrix: SecureApp in allen Tarifen; KI-Sicherheitsassistenz nur KI (20 KI-Analysen / Monat); Parental Control in PRO und KI, nicht in FREE; VPN, MailGuard, Vault separate Add-ons. Geräteslot-Zahlen werden bewusst nicht festgeschrieben.
