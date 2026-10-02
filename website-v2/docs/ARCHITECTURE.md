@@ -39,8 +39,9 @@ Neue Homepage in `src/b/` (Hero-Konsole, Plattform-Konsole, Tarif-Panel, Prinzip
 Concept-A-Komponenten bleiben im Repo unverändert; Concept A liegt vollständig auf Commit 071e175. Inhalte, Preise, Rechtstexte,
 Routing und Commerce-Schnittstellen sind unverändert. Die MainApp-Screens selbst lagen nicht im Repo; die App-Anmutung ist aus den Boards abgeleitet.
 
-## Concept B, App-Kalibrierung (textliche Design-DNA)
-Solide Navy-Surfaces statt Glas, kontrollierte blaue Borders, HeidSec-Blau für Primary Actions, Cyan nur für aktive Zustände,
-Grün nur sicher/verifiziert, Amber nur Warnung/ungeklärt, Status-Chips, größere Radien, keine Blur-/Glow-Effekte, keine Fenster-Deko.
-Hinweis: Die MainApp-Screenshots selbst lagen dem Repository/der Sitzung nicht vor; Kalibrierung erfolgte nach der schriftlichen DNA-Beschreibung.
-Nach Eingang der Screenshots Abgleich von Farbwerten, Radien und Chip-Stilen nachziehen.
+## Concept B, App-Kalibrierung (MainApp-Screens: Konto, Mein Tarif, Messenger, Kontakt finden)
+Nur visuelle Referenz. Übernommen: Grundfläche ~#050c1e, Navy-Surfaces ~#0e1a38 mit blauem Border ~#1f3b78, große Radien (Karten 26px, Listenzeilen 20px),
+Primary Action in kräftigem App-Blau als Pill, Text-Buttons in Link-Blau, Großbuchstaben-Sektionslabels in Blau-Grau, Listenzeilen mit nackten Outline-Icons + Chevron,
+Key-Value-Zeilen (Label gedämpft links, Wert weiß rechts), Segment-Chips (FREE/PRO/KI) und Segmentierung mit gefülltem Blau, Status-Chips (Grün sicher, Amber Warnung).
+Nicht übernommen: Preise, Gerätezahlen, KI-Kontingente, Accountdaten, Runtime-Werte, Entitlements (Website nutzt nur den Produktkanon).
+Bewusste Abweichung: Die App markiert die aktive Bottom-Nav in Amber; auf der Website bleibt Amber auf Warnzustände beschränkt.

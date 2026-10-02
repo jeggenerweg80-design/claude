@@ -5,7 +5,7 @@ import IntervalToggle, { type Interval } from '../components/IntervalToggle'
 import { BusinessTable } from '../pages/Pricing'
 import { consumerPlans, addons, businessKiPoolPerDevice } from '../data/pricing'
 
-/** Angelehnt an „Konto / Mein Tarif“: ein Panel statt Tarifkarten. */
+/** Angelehnt an die App-Bereiche „Mein Tarif“: Segment-Chips, Key-Value-Zeilen, Listenzeilen. Nur Daten aus dem Produktkanon. */
 export default function PlanPanel() {
   const [interval, setInterval] = useState<Interval>('month')
   const [who, setWho] = useState<'privat' | 'business'>('privat')
@@ -27,23 +27,26 @@ export default function PlanPanel() {
 
         {who === 'privat' ? (
           <div className="b-window b-plan">
-            <div className="b-plan-list" role="radiogroup" aria-label="SecureApp Tarif">
-              {consumerPlans.map((x, n) => (
-                <button key={x.id} type="button" role="radio" aria-checked={plan === n} className={plan === n ? 'on' : ''} onClick={() => setPlan(n)}>
-                  <span><b>SecureApp {x.name}</b><small>{x.tagline}</small></span>
-                  <PricePair price={x.price} interval={interval} />
-                </button>
-              ))}
-            </div>
-            <div className="b-plan-side">
-              <p className="b-pane-role"><span className="chip info">Ausgewählt</span></p>
+            <div className="b-plan-main">
+              <p className="b-label">SecureApp Tarif</p>
+              <div className="b-chips" role="radiogroup" aria-label="SecureApp Tarif">
+                {consumerPlans.map((x, n) => (
+                  <button key={x.id} type="button" role="radio" aria-checked={plan === n} onClick={() => setPlan(n)}>{x.name}</button>
+                ))}
+              </div>
               <h3>SecureApp {p.name}</h3>
-              <PricePair price={p.price} interval={interval} />
-              <p className="b-sub">Add-ons</p>
-              <ul className="b-addons">
-                {addons.map((a) => <li key={a.id}><span>{a.name}</span><PricePair price={a.price} interval={interval} /></li>)}
-              </ul>
-              <Link className="btn btn-primary" to="/preise">Tarife ansehen <span className="arrow" aria-hidden="true">→</span></Link>
+              <p className="b-tag">{p.tagline}</p>
+              <dl className="b-kv">
+                <div><dt>Plan</dt><dd>SecureApp {p.name}</dd></div>
+                <div><dt>Preis</dt><dd><PricePair price={p.price} interval={interval} /></dd></div>
+              </dl>
+              <Link className="btn btn-primary" to="/preise">Tarife ansehen</Link>
+            </div>
+            <div className="b-plan-main b-plan-side">
+              <p className="b-label">Add-ons</p>
+              <dl className="b-kv">
+                {addons.map((a) => <div key={a.id}><dt>{a.name}</dt><dd><PricePair price={a.price} interval={interval} /></dd></div>)}
+              </dl>
             </div>
           </div>
         ) : (
