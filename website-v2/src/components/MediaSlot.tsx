@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode, type CSSProperties } from 'react'
-import { slots } from '../media/slots'
+import { slots, type MediaSlotDef } from '../media/slots'
 
 interface Props {
   slot: string
@@ -9,10 +9,12 @@ interface Props {
   children?: ReactNode
   /** Auf kleinen Bildschirmen nur Poster statt Video laden (Datenschutz für Mobilfunk). */
   posterOnlyOnMobile?: boolean
+  /** Optional: Slot-Definition direkt übergeben statt über die Registry. */
+  def?: MediaSlotDef
 }
 
-export default function MediaSlot({ slot, ratio = '16/9', className = '', children, posterOnlyOnMobile = true }: Props) {
-  const def = slots[slot]
+export default function MediaSlot({ slot, ratio = '16/9', className = '', children, posterOnlyOnMobile = true, def: defProp }: Props) {
+  const def = defProp ?? slots[slot]
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(() => typeof IntersectionObserver === 'undefined')
   const [allowVideo] = useState(() => {

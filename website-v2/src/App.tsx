@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Home from './pages/Home'
+import BHeader from './b/BHeader'
+import BFooter from './b/BFooter'
+import BHome from './b/BHome'
 import ProductPage from './pages/ProductPage'
 import Pricing from './pages/Pricing'
 import Business from './pages/Business'
@@ -17,10 +17,10 @@ export default function App() {
   return (
     <>
       <a className="skip" href="#main">Zum Inhalt springen</a>
-      <Header />
+      <BHeader />
       <main id="main">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<BHome />} />
           <Route path="/secureapp" element={<ProductPage id="secureapp" />} />
           <Route path="/messenger" element={<ProductPage id="messenger" />} />
           <Route path="/vpn" element={<ProductPage id="vpn" />} />
@@ -37,7 +37,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <Footer />
+      <BFooter />
     </>
   )
 }

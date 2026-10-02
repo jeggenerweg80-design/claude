@@ -19,7 +19,7 @@ const mp4 = (name: string): MediaSource[] => [{ src: `/media/${name}.mp4`, type:
 
 export const slots: Record<string, MediaSlotDef> = {
   hero: { sources: mp4('video-hero'), poster: '/media/hero-still.webp', alt: '', maxHeight: 1080 },
-  'product-secureapp': { sources: mp4('video-secapp'), poster: '/media/plate-secapp.webp', alt: 'SecureApp Produktloop', maxHeight: 720, cutout: '/media/cutout-secapp-phone.webp' },
+  'product-secureapp': { sources: mp4('video-secapp'), poster: '/media/plate-secapp.webp', alt: 'SecureApp Produktloop', maxHeight: 720 },
   'product-messenger': { sources: [], poster: '/media/support-seam-macro.webp', alt: 'Messenger Produktloop', maxHeight: 720 },
   'product-vpn': { sources: mp4('video-vpn'), poster: '/media/plate-vpn.webp', alt: 'VPN Produktloop', maxHeight: 720 },
   'product-mailguard': { sources: mp4('video-mailguard'), poster: '/media/plate-mailguard.webp', alt: 'MailGuard Produktloop', maxHeight: 720 },

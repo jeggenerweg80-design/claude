@@ -32,3 +32,9 @@ Elevation mit Offset statt Glow, Kornschicht), Hero in Tiefenebenen (`src/hooks/
 Zeigerreaktion nur bei feinem Zeiger), Medien per Maske vom Text weggeblendet statt Verdunkelungs-Overlay, vier Layout-Familien in der Plattform-Sektion,
 Eintritt Opacity + 14px, UI-Transitions unter 300 ms, Press-Feedback, Reduced Motion = weniger statt null. Die Engine (`cool-website/engine`) wird nicht verwendet.
 Rechtstexte aus dem Bestand bleiben textlich unverändert (enthalten teils Gedankenstriche).
+
+## Concept B (visueller Reset, Branch claude/website-v2-concept-b)
+Neue Homepage in `src/b/` (Hero-Konsole, Plattform-Konsole, Tarif-Panel, Prinzipien/FAQ, CTA-Leiste) mit eigener Designsprache `src/b/b.css`
+(Markenboards: Near-Black/Navy, Electric Blue, Cyan, Threat-Rot nur für Bedrohungsmarker; Fenster, Seitenleiste, Readout nach App-Logik).
+Concept-A-Komponenten bleiben im Repo unverändert; Concept A liegt vollständig auf Commit 071e175. Inhalte, Preise, Rechtstexte,
+Routing und Commerce-Schnittstellen sind unverändert. Die MainApp-Screens selbst lagen nicht im Repo; die App-Anmutung ist aus den Boards abgeleitet.

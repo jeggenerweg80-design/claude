@@ -7,6 +7,7 @@ import './design/base.css'
 import './design/components.css'
 import './design/home.css'
 import './design/pages.css'
+import './b/b.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
