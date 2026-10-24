@@ -233,7 +233,7 @@
       .nav-links, .nav-login, .nav-actions .btn { display: none; }
       .menu-btn { display: inline-flex; }
       .mobile-menu { display: block; max-height: 0; overflow: hidden; visibility: hidden; transition: max-height .4s var(--ease), visibility 0s linear .4s; }
-      .site-header.is-open .mobile-menu { max-height: 560px; visibility: visible; transition: max-height .4s var(--ease); }
+      .site-header.is-open .mobile-menu { max-height: calc(100vh - 72px); max-height: calc(100dvh - 72px); overflow-y: auto; overscroll-behavior: contain; visibility: visible; transition: max-height .4s var(--ease); }
       .mobile-menu nav { display: grid; gap: 2px; padding: 8px 0 22px; }
       .mobile-menu a:not(.btn) { display: block; padding: 13px 4px; text-decoration: none; color: var(--frost); font-size: 18px; font-weight: 500; border-bottom: 1px solid var(--line); }
       .mobile-menu .btn { margin-top: 18px; }
@@ -688,7 +688,7 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
   <!-- Icon-Sprite -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
@@ -713,7 +713,7 @@
 
   <a class="skip" href="#main">Zum Inhalt springen</a>
 
-  <header class="site-header" id="top">
+  <header class="site-header">
     <div class="wrap">
       <div class="nav">
         <a class="brand" href="#top" aria-label="HeidSec – zum Seitenanfang">
