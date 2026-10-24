@@ -15,5 +15,15 @@ cd landing-2 && python3 -m http.server 8792 --bind 127.0.0.1
 ```
 
 Links auf `/register/`, `/login/`, `/legal/...` usw. sind wurzelrelativ und funktionieren erst auf www.heidsec.de.
-Preise stammen ausschließlich aus der verbindlichen Preistabelle; Kombipakete sind bewusst nicht enthalten,
-da keine bestätigten Paketpreise vorlagen.
+`og:image`/`twitter:image` zeigen auf `https://www.heidsec.de/assets/img/og-image.jpg` – setzt voraus, dass die Seite im Web-Root liegt.
+
+## Inhaltsquellen
+
+- Privattarife, Module, Zusatzgerät: verbindliche Owner-Preistabelle (Monat/Jahr).
+- Kombipakete (nur Monatspreise bestätigt): PRO+VPN 12,98 €, PRO+MailGuard 10,98 €, PRO+Vault 10,98 €, PRO+MailGuard+Vault 13,97 €.
+- Kinderschutz in PRO und KI, KI-Sicherheitsassistenz nur KI (20 KI-Analysen/Monat): owner-bestätigte Matrix (`claude/website-v2-concept-b`, 92bdb9b).
+- Business PRO/KI Complete (10–50 Geräte, Messenger + VPN, KI-Pool 20/Gerät/Monat): Produktkanon `website-v2/src/data/pricing.ts`.
+- Messenger: Textchat + Voice Calls, ohne Dateien/Medien/Videoanrufe; nur Business-Pakete, keinem Privattarif zugeordnet.
+- Aussagen zu „ausschließlich lokaler“ KI-Verarbeitung wurden entfernt: im Repository nicht durch Architektur belegt
+  (monatliche KI-Kontingente und ein unternehmensweiter KI-Pool sprechen gegen rein lokale Verarbeitung).
+- Gerätelimits der Privattarife sind nicht festgelegt und werden nicht genannt.
