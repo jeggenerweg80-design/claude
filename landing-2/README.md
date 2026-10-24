@@ -3,6 +3,7 @@
 Eigenständige, statische Landingpage. Keine Build-Schritte, keine externen Requests.
 
 - `index.html` – komplette Seite (HTML, CSS und ~80 Zeilen Vanilla-JS inline)
+- `assets/img/app/` – Original-App-Screenshots (Start, Schnellzugriffe, Schutzmodule, VPN, Messenger), metadatenfrei als WebP 450/900 px
 - `assets/img/` – optimierte WebP-Varianten (800/1600 px) der bestehenden Marken-Plates, Logo, Favicons
 - `assets/media/hero-loop.mp4` – Hero-Loop (1 MB, wird nur ohne „reduzierte Bewegung“/Datensparmodus geladen)
 - `assets/fonts/` – Inter, Inter Display, JetBrains Mono (lokal, Latin-Subset, SIL OFL 1.1)
@@ -26,4 +27,6 @@ Links auf `/register/`, `/login/`, `/legal/...` usw. sind wurzelrelativ und funk
 - Messenger: Textchat + Voice Calls, ohne Dateien/Medien/Videoanrufe; nur Business-Pakete, keinem Privattarif zugeordnet.
 - Aussagen zu „ausschließlich lokaler“ KI-Verarbeitung wurden entfernt: im Repository nicht durch Architektur belegt
   (monatliche KI-Kontingente und ein unternehmensweiter KI-Pool sprechen gegen rein lokale Verarbeitung).
-- Gerätelimits der Privattarife sind nicht festgelegt und werden nicht genannt.
+- Zusatzgerät: 0,99 €/Monat oder 9,99 €/Jahr, maximal 5 Zusatzgeräte (Owner-Vorgabe).
+- Business-Preis „pro Gerät“ ist rechnerisch abgeleitet (Paketpreis ÷ Geräte), Business-Anfragen laufen per E-Mail (kein Checkout).
+- Screenshots stammen aus einem Testkonto (Tarif KI) und enthalten Beispieldaten, u. a. den Server „Loopback-Test (Entwicklung)“ im VPN-Screenshot.
